@@ -6,6 +6,8 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
 endif()
 project(hepemshow)
 
+# Have linker set RPATH, not RUNPATH
+SET(CMAKE_EXE_LINKER_FLAGS "-Wl,--disable-new-dtags")
 
 #----------------------------------------------------------------------------
 # Find G4HepEm (sets G4HepEm_geant4_FOUND if a complete, Geant4 dependent build)
